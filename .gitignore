@@ -1,0 +1,10 @@
+[CmdletBinding()]
+param (
+    [string]$File
+)
+
+if ((($File -notlike "*blob\latest.dat") -and ($File -like "*latest.dat")) -or (($File -notlike "*blob\comments.txt") -and ($File -like "*comments.txt")) -or ($File -like "*.sgit*") -or (($File -notlike "*blob\config.ini") -and ($File -like "*config.ini"))) {
+    Write-Host "1"
+} else {
+    Write-Host "0"
+}
